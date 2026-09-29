@@ -94,7 +94,7 @@ Designed specifically for embedded firmware developers, industrial automation en
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ```
 
-## Quick Start
+## ⚡ Quick Start
 
 1. Copy `regtable.h` into your project's include path.
 
@@ -119,12 +119,12 @@ int main(void) {
 }
 ```
 
-## Building and Running the Demo
+## 🛠️ Building and Running the Demo
 
 ```bash
 make run
 ```
 
-## License
+## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
