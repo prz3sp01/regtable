@@ -29,12 +29,10 @@ Designed specifically for embedded firmware developers, industrial automation en
 | IO Status (8b: HEX+BIN)   |                                 0xC3 b11000011 |
 | Cycle Counter (32b: DEC)  |                                       148920 |
 +---------------------------+----------------------------------------------+
-
+```
 ### 2. Single-Line UTF-8 (Modern & Clean)
 
-Plaintext
-
-```
+```text
 ┌───────────────────────────┬────────────────────────────────────────────┐
 │ 2. SINGLE LINE UTF-8      │ VALUE / REGISTER                           │
 ├───────────────────────────┼────────────────────────────────────────────┤
