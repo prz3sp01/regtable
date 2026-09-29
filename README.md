@@ -4,7 +4,7 @@
 
 ---
 
-Designed specifically for embedded firmware developers, industrial automation engineers (PLC/fieldbus), and CLI tooling where dynamic memory allocation (`malloc`/`free`) is forbidden or undesirable.
+Designed specifically for embedded firmware developers, and CLI tooling where dynamic memory allocation (`malloc`/`free`) is forbidden or undesirable.
 
 ## 🚀 Key Features
 
