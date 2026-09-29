@@ -22,13 +22,13 @@ Designed specifically for embedded firmware developers, industrial automation en
 ### 1. ASCII (7-bit clean, UART & Serial Terminals)
 
 ```text
-+---------------------------+----------------------------------------------+
-| 1. ASCII SERIAL LINK      | VALUE / REGISTER                             |
-+---------------------------+----------------------------------------------+
-| Protocol                  |                           RS485 / Modbus RTU |
-| IO Status (8b: HEX+BIN)   |                                 0xC3 b11000011 |
-| Cycle Counter (32b: DEC)  |                                       148920 |
-+---------------------------+----------------------------------------------+
++---------------------------+--------------------------------------------+
+| 1. ASCII SERIAL LINK      | VALUE / REGISTER                           |
++---------------------------+--------------------------------------------+
+| Protocol                  |                         RS485 / Modbus RTU |
+| IO Status (8b: HEX+BIN)   |                             0xC3 b11000011 |
+| Cycle Counter (32b: DEC)  |                                     148920 |
++---------------------------+--------------------------------------------+
 ```
 ### 2. Single-Line UTF-8 (Modern & Clean)
 
@@ -45,9 +45,7 @@ Designed specifically for embedded firmware developers, industrial automation en
 
 ### 3. Double-Line UTF-8 (Industrial Retro / BIOS)
 
-Plaintext
-
-```
+```text
 ╔═══════════════════════════╦════════════════════════════════════════════╗
 ║ 3. DOUBLE LINE DRIVE      ║ VALUE / REGISTER                           ║
 ╠═══════════════════════════╬════════════════════════════════════════════╣
@@ -60,9 +58,7 @@ Plaintext
 
 ### 4. Rounded Corners UTF-8 (Modern CLI)
 
-Plaintext
-
-```
+```text
 ╭───────────────────────────┬────────────────────────────────────────────╮
 │ 4. ROUNDED CORNERS        │ VALUE / REGISTER                           │
 ├───────────────────────────┼────────────────────────────────────────────┤
@@ -75,9 +71,7 @@ Plaintext
 
 ### 5. Markdown Style (Documentation & Log Files)
 
-Plaintext
-
-```
+```text
 | 5. MARKDOWN FORMAT        | VALUE / REGISTER                           |
 |:--------------------------|-------------------------------------------:|
 | Frame Validation          |                                     CRC_OK |
@@ -89,9 +83,7 @@ Plaintext
 
 ### 6. Wave Style (Retro Terminal)
 
-Plaintext
-
-```
+```text
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 : 6. WAVE CONSOLE STYLE     : VALUE / REGISTER                           :
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,7 +91,7 @@ Plaintext
 : IO Bits (8b: FULL)        :                         195 0xC3 b11000011 :
 : Encoder (16b: FULL)       :                  0x3F1F b00111111 00011111 :
 : Raw Bits (32b: BIN)       :       b10100101 01011010 00010010 00110100 :
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ```
 
 ## Quick Start
@@ -108,9 +100,7 @@ Plaintext
 
 2. Include the header in your C or C++ file:
 
-C
-
-```
+```C
 #include "regtable.h"
 
 int main(void) {
@@ -131,9 +121,7 @@ int main(void) {
 
 ## Building and Running the Demo
 
-Bash
-
-```
+```bash
 make run
 ```
 
