@@ -1,4 +1,4 @@
-text = """# regtable.h
+# regtable.h
 
 ### A lightweight, zero-heap, single-header C library for hardware register inspection and formatted CLI tables. Designed specifically for embedded firmware developers, industrial automation engineers (PLC/fieldbus), and CLI diagnostic tooling where dynamic memory allocation (`malloc`/`free`) is forbidden.
 
@@ -6,35 +6,29 @@ text = """# regtable.h
 
 Designed specifically for embedded firmware developers, industrial automation engineers (PLC/fieldbus), and CLI tooling where dynamic memory allocation (`malloc`/`free`) is forbidden or undesirable.
 
-## Key Features
+## 🚀 Key Features
 
-- **Header-Only:** Single file (`regtable.h`), zero external dependencies beyond standard C99 libc.
+- **Header-Only Simplicity:** Single C99 header file (`regtable.h`) with zero external dependencies beyond standard libc.
+- **Zero-Heap Architecture:** Operates exclusively using small stack buffers. Prevents memory fragmentation and leaks in safety-critical environments.
+- **Hardware Register Inspection:** Native formatting for **8-bit**, **16-bit**, and **32-bit** registers with automatic byte-aligned binary grouping (`b10100101 01011010`).
+- **Flexible Representation Flags:** Display values in decimal (`F_DEC`), hexadecimal (`F_HEX`), binary (`F_BIN`), or any valid combination.
+- **6 Distinct Visual Border Styles:** ASCII (UART/serial links), Single-line UTF-8, Double-line UTF-8, Rounded UTF-8, Markdown tables, and Retro Wave.
+- **C and C++ Compatible:** Standard-compliant C99 with `extern "C"` guards for seamless integration with C++ and Arduino/ESP-IDF toolchains.
 
-- **Zero-Heap:** Pure stack buffer operations. No dynamic memory allocation, preventing heap fragmentation.
+---
 
-- **Hardware Register Formatting:** Native inspection for 8-bit, 16-bit, and 32-bit registers with automatic byte-aligned binary separation (`b10100101 01011010`).
+## 🎨 Visual Table Styles
 
-- **Flexible Flags:** Select individual or combined formats (`F_DEC`, `F_HEX`, `F_BIN`).
+### 1. ASCII (7-bit clean, UART & Serial Terminals)
 
-- **6 Visual Styles:** ASCII (UART/serial), Single-line UTF-8, Double-line UTF-8 (DOS/BIOS), Rounded UTF-8, Markdown, and Wave.
-
-- **C and C++ Compatible:** Safe `extern "C"` wrappers.
-
-## Table Styles
-
-### 1. ASCII (7-bit clean, UART serial consoles)
-
-Plaintext
-
-```
-+---------------------------+--------------------------------------------+
-| 1. ASCII SERIAL LINK      | VALUE / REGISTER                           |
-+---------------------------+--------------------------------------------+
-| Protocol                  |                         RS485 / Modbus RTU |
-| IO Status (8b: HEX+BIN)   |                             0xC3 b11000011 |
-| Cycle Counter (32b: DEC)  |                                     148920 |
-+---------------------------+--------------------------------------------+
-```
+```text
++---------------------------+----------------------------------------------+
+| 1. ASCII SERIAL LINK      | VALUE / REGISTER                             |
++---------------------------+----------------------------------------------+
+| Protocol                  |                           RS485 / Modbus RTU |
+| IO Status (8b: HEX+BIN)   |                                 0xC3 b11000011 |
+| Cycle Counter (32b: DEC)  |                                       148920 |
++---------------------------+----------------------------------------------+
 
 ### 2. Single-Line UTF-8 (Modern & Clean)
 
