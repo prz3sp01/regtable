@@ -127,4 +127,6 @@ make run
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+- **License:** [MIT License](LICENSE)
+- **Copyright:** (c) 2026 Karol "prz3sp01" Przespolewski
+- **Contact:** karol@przespol.eu
