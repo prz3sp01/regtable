@@ -1,6 +1,8 @@
-# regtable.h
+text = """# regtable.h
 
-A lightweight, zero-heap, single-header C library for hardware register inspection and formatted CLI tables.
+### A lightweight, zero-heap, single-header C library for hardware register inspection and formatted CLI tables. Designed specifically for embedded firmware developers, industrial automation engineers (PLC/fieldbus), and CLI diagnostic tooling where dynamic memory allocation (`malloc`/`free`) is forbidden.
+
+---
 
 Designed specifically for embedded firmware developers, industrial automation engineers (PLC/fieldbus), and CLI tooling where dynamic memory allocation (`malloc`/`free`) is forbidden or undesirable.
 
