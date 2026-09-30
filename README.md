@@ -8,12 +8,14 @@ Designed specifically for embedded firmware developers, and CLI tooling where dy
 
 ## 🚀 Key Features
 
-- **Header-Only Simplicity:** Single C99 header file (`regtable.h`) with zero external dependencies beyond standard libc.
-- **Zero-Heap Architecture:** Operates exclusively using small stack buffers. Prevents memory fragmentation and leaks in safety-critical environments.
-- **Hardware Register Inspection:** Native formatting for **8-bit**, **16-bit**, and **32-bit** registers with automatic byte-aligned binary grouping (`b10100101 01011010`).
-- **Flexible Representation Flags:** Display values in decimal (`F_DEC`), hexadecimal (`F_HEX`), binary (`F_BIN`), or any valid combination.
-- **6 Distinct Visual Border Styles:** ASCII (UART/serial links), Single-line UTF-8, Double-line UTF-8, Rounded UTF-8, Markdown tables, and Retro Wave.
-- **C and C++ Compatible:** Standard-compliant C99 with `extern "C"` guards for seamless integration with C++ and Arduino/ESP-IDF toolchains.
+- **Header-Only**: Single drop-in file (`regtable.h`), zero external dependencies beyond standard C99 `libc`.
+- **Zero-Heap**: Pure stack buffer operations with no dynamic memory allocation (`malloc`/`free`), eliminating heap fragmentation risks in embedded systems.
+- **Hardware Register Formatting**: Native inspection for 8-bit, 16-bit, and 32-bit registers with adaptive binary formatting (`b10100101 01011010`) that balances byte spacing based on active format flags.
+- **Pointer & Memory Inspection**: Architecture-aware pointer formatting (32-bit and 64-bit systems), safe `(NULL)` handling without faults, and optional inline memory dereferencing for 8-bit, 16-bit, and 32-bit values (`DEREF8`, `DEREF16`, `DEREF32`).
+- **Flexible Format Flags**: Freely selectable individual or combined value representations (`F_DEC`, `F_HEX`, `F_BIN`).
+- **8 Visual Framing Styles**: ASCII (UART/serial consoles), Single-line UTF-8, Double-line UTF-8 (DOS/BIOS aesthetic), Rounded UTF-8, Markdown, Wavy ASCII, plus new industrial variants: Slash (`///`) and Hashes (`###`).
+- **Strict Fixed-Width Alignment**: A guaranteed 44-character value column prevents border drift across both 32-bit targets and 64-bit host systems.
+- **C and C++ Compatible**: Safe `extern "C"` wrappers for straightforward integration into both C and C++ toolchains.
 
 ---
 
@@ -92,6 +94,31 @@ Designed specifically for embedded firmware developers, and CLI tooling where dy
 : Encoder (16b: FULL)       :                  0x3F1F b00111111 00011111 :
 : Raw Bits (32b: BIN)       :       b10100101 01011010 00010010 00110100 :
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+### 7. Styl SLASH (/// oraz |)
+```text
+//////////////////////////////////////////////////////////////////////////
+| 7. SLASH INDUSTRIAL       | VALUE / REGISTER                           |
+//////////////////////////////////////////////////////////////////////////
+| Protocol                  |                         RS485 / Modbus RTU |
+| IO Status (8b: HEX+BIN)   |                             0xC3 b11000011 |
+| Cycle Counter (32b: DEC)  |                                     148920 |
+| Buffer Pointer (raw)      |                         0x00007FFFE0C12EBC |
+| Target Register (*p)      |           0x00007FFFE0C12EBC -> 0x000021AC |
+//////////////////////////////////////////////////////////////////////////
+```
+### 8. Styl HASHES (### oraz #)
+
+```text
+##########################################################################
+# 8. HASHES AUDIT LOG       # VALUE / REGISTER                           #
+##########################################################################
+# Protocol                  #                         RS485 / Modbus RTU #
+# IO Status (8b: HEX+BIN)   #                             0xC3 b11000011 #
+# Cycle Counter (32b: DEC)  #                                     148920 #
+# Buffer Pointer (raw)      #                         0x00007FFFE0C12EBC #
+# Target Register (*p)      #           0x00007FFFE0C12EBC -> 0x000021AC #
+##########################################################################
 ```
 
 ## ⚡ Quick Start
